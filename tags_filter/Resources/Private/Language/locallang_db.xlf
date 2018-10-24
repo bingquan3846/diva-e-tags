@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-09T12:05:49Z" product-name="tags_filter">
+		<header/>
+		<body>
+			<trans-unit id="tx_tagsfilter_domain_model_reference">
+				<source>Reference</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.teaser">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.shortdescription">
+				<source>short Description</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.defaultpic">
+				<source>Pic (Black and white)</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.hoverpic">
+				<source>Pic (Color)</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.detailpic">
+				<source>Pic (Detail)</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_reference.teaserpic">
+				<source>Pic (Teaser)</source>
+			</trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service">
+                <source>Service</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.teaser">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.shortdescription">
+                <source>Short Description</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.advantages">
+                <source>Advantages</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.related_contents">
+                <source>related contents</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_service.label">
+                <source>Description for other services</source>
+            </trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_job">
+				<source>Job</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_job.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_job.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_job.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_tagsfilter_domain_model_job.description">
+				<source>Description</source>
+			</trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_partner">
+                <source>Partner</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_partner">
+                <source>Partner</source>
+            </trans-unit>
+             <trans-unit id="tx_tagsfilter_domain_model_partner.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_partner.pics">
+                <source>Pics</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_advantage">
+                <source>Advantage</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_advantage.title">
+                <source>title</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_advantage.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_advantage.pics">
+                <source>Pics</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study">
+                <source>Case study</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.teaser">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.statistic">
+                <source>Statistic</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.codes">
+                <source>Codes</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.platforms">
+                <source>Platforms</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.persons">
+                <source>Persons</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.duration">
+                <source>Duration</source>
+            </trans-unit>
+             <trans-unit id="tx_tagsfilter_domain_model_case_study.pics">
+                <source>Pics</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.page">
+                <source>Related Page</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.video">
+                <source>Youtube parameter</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.speaker">
+                <source>Speaker</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.type">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.logo">
+                <source>Logo</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.videopreview">
+                <source>Image for video preview</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_case_study.homepage">
+                <source>show in homepage?</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.title">
+                <source>Event</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.firstname">
+                <source>Firstname</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.lastname">
+                <source>Lastname</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.position">
+                <source>Position</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.company">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="tx_tagsfilter_domain_model_eventuser.question">
+                <source>Inqury</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

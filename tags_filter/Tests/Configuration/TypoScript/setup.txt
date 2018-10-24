@@ -1,0 +1,120 @@
+
+plugin.tx_tagsfilter_tagsfilter {
+	view {
+		templateRootPaths.0 = {$plugin.tx_tagsfilter_tagsfilter.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_tagsfilter_tagsfilter.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_tagsfilter_tagsfilter.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_tagsfilter_tagsfilter.persistence.storagePid}
+		classes{
+			Divae\TagsFilter\Domain\Model\News{
+				mapping{
+					tableName = tx_news_domain_model_news
+				}
+			}
+			Divae\TagsFilter\Domain\Model\FrontendUser{
+				mapping{
+					tableName = fe_users
+				}
+			}
+
+			Divae\TagsFilter\Domain\Model\Content {
+				mapping {
+					tableName = tt_content
+					columns {
+						uid.mapOnProperty = uid
+					}
+				}
+			}
+		}
+	}
+
+	settings{
+
+		objects{
+			1{
+				partialFolder = References
+				repository = Divae\TagsFilter\Domain\Repository\ReferenceRepository
+				random = 0
+				limit = 5
+			}
+			2{
+				partialFolder = Reference
+				repository = Divae\TagsFilter\Domain\Repository\ReferenceRepository
+				random = 1
+				limit = 1
+			}
+			3 {
+				partialFolder = News
+				repository = Divae\TagsFilter\Domain\Repository\NewsRepository
+				fields{
+					categories = 17
+				}
+				random = 1
+				limit = 1
+			}
+
+			4 {
+				partialFolder = Event
+				repository = Divae\TagsFilter\Domain\Repository\NewsRepository
+				fields{
+					categories = 18
+				}
+				random = 1
+				limit = 1
+			}
+			5 {
+				partialFolder = Partner
+				repository = Divae\TagsFilter\Domain\Repository\PartnerRepository
+				random = 1
+				limit = 1
+			}
+
+		}
+	}
+}
+
+plugin.tx_tagsfilter._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-tags-filter table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-tags-filter table th {
+		font-weight:bold;
+	}
+
+	.tx-tags-filter table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+
+
+plugin.tx_tagsfilter_jobcount < plugin.tx_tagsfilter_tagsfilter
+
+plugin.tx_tagsfilter_jobcount.persistence.storagePid =  {$plugin.tx_tagsfilter_jobcount.persistence.storagePid}
+
+plugin.tx_tagsfilter_serviceslist < plugin.tx_tagsfilter_tagsfilter
+plugin.tx_tagsfilter_showservice < plugin.tx_tagsfilter_tagsfilter
+plugin.tx_tagsfilter_reference < plugin.tx_tagsfilter_tagsfilter

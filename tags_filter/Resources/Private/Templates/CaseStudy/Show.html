@@ -1,0 +1,160 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+<f:section name="main">
+
+    <link rel="stylesheet" type="text/css" href="/fileadmin/templates/fluid/css/performanceSpectrum.css" media="all">
+    <section class="info-box project-data-box">
+        <div class="info-box-inner bg-stretch">
+            <span data-srcset="/fileadmin/templates/fluid/images/bg-project-box.jpg, /fileadmin/templates/fluid/images/bg-project-box-2x.jpg 2x"></span>
+            <div class="container">
+                <div class="top-block hidden-xs">
+                    <div class="heading-lg">
+                        <h1>Projektdaten in Kürze</h1>
+                    </div>
+                         <div class="cw-module">
+                            <div id="cw-1" class="cw-module__context">
+
+                                <ul class="cw-categories">
+                                    <f:for each="{circleData}" as="category" key="key" iteration="i">
+                                        <li id="cw-{key}" data-percentage="{category.0.3}">
+                                            <div class="cw-name">{category.0.1}</div>
+                                            <p class="cw-description">{category.0.2}</p>
+                                            <ul class="cw-categories">
+                                                <f:for each="{category.subcategories}" as="child" iteration="j">
+                                                    <li id="cw-{child.0}" data-percentage="{child.3}">
+                                                        <div class="cw-name">{child.1}</div>
+                                                        <p class="cw-description">{child.2}</p>
+                                                    </li>
+                                                </f:for>
+                                            </ul>
+
+                                        </li>
+                                    </f:for>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                </div>
+                <div class="keyfacts-block">
+
+                <div class="keyfacts-block">
+                    <h2>Keyfacts</h2>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-3">
+                            <!-- thumbnail -->
+                            <a href="#" class="box-item sm-box text-center">
+                                <div class="top-holder">
+                                    <strong class="num-val"><f:format.number thousandsSeparator=",">{caseStudy.codes}</f:format.number></strong>
+                                    <p>Zeilen</p>
+                                </div>
+                                <div class="bottom-holder">
+                                    <div class="more-box">
+                                        <span class="read-more">Frontend-Code</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <!-- thumbnail -->
+                            <a href="#" class="box-item sm-box text-center">
+                                <div class="top-holder">
+                                    <strong class="num-val">{caseStudy.platforms}</strong>
+                                    <p>verschiedene</p>
+                                </div>
+                                <div class="bottom-holder">
+                                    <div class="more-box">
+                                        <span class="read-more">Plattformen</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <!-- thumbnail -->
+                            <a href="#" class="box-item sm-box text-center">
+                                <div class="top-holder">
+                                    <strong class="num-val">{caseStudy.persons}</strong>
+                                    <p>beteiligte</p>
+                                </div>
+                                <div class="bottom-holder">
+                                    <div class="more-box">
+                                        <span class="read-more">Personen</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <!-- thumbnail -->
+                            <a href="#" class="box-item sm-box text-center">
+                                <div class="top-holder">
+                                    <strong class="num-val">{caseStudy.duration}</strong>
+                                    <p>Monate</p>
+                                </div>
+                                <div class="bottom-holder">
+                                    <div class="more-box">
+                                        <span class="read-more">Projektdauer</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-box">
+                    <f:if condition="{caseStudy.tags}">
+                        <div class="widget-box">
+                            <div class="heading-sm">
+                                <strong class="title"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:tags.title"></f:translate></strong>
+                            </div>
+                            <f:render partial="Tags/Item" arguments="{tags: caseStudy.tags}" />
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="pagination-holder bg-gray">
+        <div class="container">
+            <ul class="pagination-box text-center">
+                <f:if condition="{previous}">
+                <li>
+                    <a href='<f:uri.page pageUid="{previous.0.page}"></f:uri.page>' class="title-pag hidden-xs">{previous.0.title}</a>
+                </li>
+                <li>
+                    <a href='<f:uri.page pageUid="{previous.0.page}"></f:uri.page>' class="page-prev">
+                        <i class="icon-left-arrow"></i>
+                    </a>
+                </li>
+                </f:if>
+
+                <f:if condition="{next}">
+                <li>
+                    <a href='<f:uri.page pageUid="{next.0.page}"></f:uri.page>' class="cure-page">weiter zu</a>
+                </li>
+                <li>
+                    <a href='<f:uri.page pageUid="{next.0.page}"></f:uri.page>' class="page-next">
+                        <i class="icon-right-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href='<f:uri.page pageUid="{next.0.page}"></f:uri.page>' class="title-pag hidden-xs">{next.0.title}</a>
+                </li>
+                </f:if>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="/fileadmin/templates/fluid/js/cw-libs.js" type="text/javascript"></script>
+
+    <script src="/fileadmin/templates/fluid/js/array-polyfills.js" type="text/javascript"></script>
+    <script src="/fileadmin/templates/fluid/js/PerformanceSpectrum.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            new PerformanceSpectrum();
+        });
+    </script>
+</f:section>
+</html>

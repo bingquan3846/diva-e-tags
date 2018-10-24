@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+
+<f:section name="main">
+        <!--<f:form.select name="category" options="{categories}" optionLabelField="title" optionValueField="uid"/>-->
+    <div class="cycle-gallery">
+        <div class="cycle-gallery-holder">
+            <div class="mask">
+                <div class="slideset gallery-more-box">
+
+                <f:for each="{items}" as="item">
+                <f:render partial="{item.0}/Item" arguments="{objects: item.1, category: item.2}" />
+                </f:for>
+                </div>
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</f:section>
+</html>

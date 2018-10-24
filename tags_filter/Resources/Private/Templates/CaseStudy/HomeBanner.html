@@ -1,0 +1,148 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+<f:section name="main">
+    <section class="main-visual bg-stretch">
+        <span data-srcset="{randomOne.pics.originalResource.publicUrl}"></span>
+        <div class="container">
+            <div class="row row-sm-center">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="bth-control-box">
+                        <button class="btn-play-main">
+                            <i class="icon-play"></i>
+                        </button>
+                    </div>
+                    <div class="personal-box">
+                        <a href="#" class="name">{randomOne.speaker.0.name}</a>
+                        <span class="position">{randomOne.speaker.0.position}</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 scroll-point">
+                    <div class="label-box">
+                        <f:if condition="{randomOne.logo}">
+                            <div class="logo-img hidden-xs">
+                                <a href="#">
+                                    <f:image src="{randomOne.logo.uid}" treatIdAsReference="1" width="53" height="53"/>
+                                </a>
+                            </div>
+                        </f:if>
+                        <div class="heading-box">
+                            <h1>{randomOne.title}</h1>
+                        </div>
+                        <ul class="meta-list hidden-xs">
+                            <li><a href="#">{randomOne.type}</a></li>
+                        </ul>
+                        <f:if condition="{randomOne.page}">
+                        <a href="<f:uri.page pageUid="{randomOne.page}" />" class="btn btn-neg">Call to action</a>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- popup video holder -->
+    <div class="popup-video" id="popup-video">
+        <div class="inner-box">
+            <div class="iframe-video">
+                <div class="video-block">
+                    <div class="video-box" data-url="{randomOne.video}" data-height="560" data-width="315"></div>
+                </div>
+            </div>
+            <a href="#" class="btn-close-popup">
+                <i class="icon-cancel"></i>
+            </a>
+        </div>
+    </div>
+    <!-- popup text holder -->
+    <div class="popup-text" id="popup-text">
+        <div class="inner-box">
+            <div class="de-video-layer de-video-layer--open">
+                <div class="de-video-layer__main">
+                    <div class="de-video-layer__main-wrapper">
+                        <article class="de-video-layer__main-header">
+                            <h2 class="de-video-layer-explanation">
+                                {randomOne.title}
+                            </h2>
+                            <div class="de-video-layer__person">
+                                {randomOne.speaker.0.name}
+                            </div>
+                            <div class="de-video-layer__person-position">
+                                {randomOne.speaker.0.position}
+                            </div>
+                            <f:if condition="{randomOne.page}">
+                                <div class="de-video-layer__main-study-button">
+                                    <a href="<f:uri.page pageUid="{randomOne.page}" />" target="_blank" class="btn btn-neg">
+                                        Case study ansehen
+                                    </a>
+                                </div>
+                            </f:if>
+                            <div class="de-video-layer__main-view-video">
+                                <a href="#" class="btn-reply">Video neu abspielen</a>
+                            </div>
+                        </article>
+                        <ul class="de-video-layer__main-details">
+                            <li class="de-video-layer__project-info">
+                                {randomOne.codes} Zeilen Codes
+                            </li>
+                            <li class="de-video-layer__project-info">
+                                {randomOne.persons} Mitarbeiter
+                            </li>
+                            <li class="de-video-layer__project-info">
+                                {randomOne.duration} Arbeitsstunden
+                            </li>
+                        </ul>
+                        <f:if condition="{randomOne.tags}">
+
+                            <f:render partial="Tags/Item" arguments="{tags: randomOne.tags}" />
+
+                        </f:if>
+                    </div>
+                </div>
+                <div class="de-video-layer__additional-projects">
+                    <div class="de-video-layer__projects-wrapper">
+                        <div class="de-video-layer__projects-header">
+                            <h5>Weitere Projekte</h5>
+                        </div>
+                        <div class="de-video-layer__video-list">
+
+                            <f:for each="{caseStudies}" as="item">
+                                <f:if condition="{item.uid} != {randomOne.uid}">
+                                    <div class="de-video-layer__next-video">
+
+                                        <div class="de-video-layer__video-preview">
+                                            <a href='<f:uri.action action="homeBanner" extensionName="tagsfilter" arguments="{item:item}" pluginName="homebanner" noCacheHash="1" noCache="1" controller="CaseStudy"/>'>
+                                            <f:image src="{item.videopreview.uid}" treatIdAsReference="1" class="de-video-layer__video-image" />
+                                            </a>
+                                        </div>
+                                        <div class="de-video-layer__video-info">
+                                            <span><strong>{item.title}</strong></span>
+                                            <div class="text-box">
+                                                <div class="heading-xs white-line de-video-layer__video-info--stroke">
+                                                    <span class="title">{item.speaker.0.name}</span>
+                                                </div>
+                                                <span class="position">{item.speaker.0.position}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:if>
+                            </f:for>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn-close-popup">
+                <i class="icon-cancel"></i>
+            </a>
+        </div>
+        <script type="text/javascript">
+            jQuery(document).on('ready', function(){
+                jQuery('#popup-text, #popup-video').appendTo('body');
+            });
+
+        </script>
+    </div>
+
+</f:section>
+</html>

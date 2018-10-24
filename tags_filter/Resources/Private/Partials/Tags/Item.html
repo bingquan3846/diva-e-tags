@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+             data-namespace-typo3-fluid="true">
+
+<!--TYPO3SEARCH_end-->
+<ul class="solutions-list">
+    <f:for each="{tags}" as="tag">
+        <li>
+            <f:if condition="{tag.service}">
+                <f:then>
+                    <f:for each="{tag.service}" as="object">
+                        <a href='<f:uri.action  pageUid="{settings.tagLinkPage}"  action="showService" extensionName="tagsfilter" arguments="{service:object}" pluginName="showservice" noCacheHash="0" noCache="0" controller="Index"/>' class="btn btn-stand">{tag.title}</a>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <a href='' class="btn btn-stand">{tag.title}</a>
+                </f:else>
+            </f:if>
+        </li>
+    </f:for>
+</ul>
+<!--TYPO3SEARCH_begin-->
+
+</html>

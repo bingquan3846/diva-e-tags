@@ -1,0 +1,168 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="main">
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery("input[name='tx_divaelocationmanager_divaelocationmanager[word]']").blur(function(){jQuery('#searchForm').submit()});
+            jQuery("#wo, #was, #als").change(function(){jQuery('#searchForm').submit()});
+        });
+    </script>
+    <div class="visual-block bg-stretch">
+        <span data-srcset="/fileadmin/templates/fluid/images/img-visual7.jpg"></span>
+        <div class="filters-area">
+            <a name="result"></a>
+            <div class="container">
+                <form action="<f:uri.action action="search" noCache="1" />#result" class="filters-form" method="post" id="searchForm">
+                    <div class="column">
+                        <label>Volltextsuche:</label>
+                        <input type="search" placeholder="Begriff eingeben…" name="tx_divaelocationmanager_divaelocationmanager[word]" value="{arguments.word}">
+                        <button type="submit"><i class="icon-ico-search"></i></button>
+                    </div>
+                    <div class="column">
+                        <label for="wo">
+                            <span class="label-title">wo</span>
+                            <select id="wo" name="tx_divaelocationmanager_divaelocationmanager[city]">
+                                    <option value="0">alle Standorte</option>
+                                <f:for each="{locations}" as="location">
+                                    <f:if condition="{location.uid} == {arguments.city}">
+                                        <f:then>
+                                            <option value="{location.uid}" selected>{location.city}</option>
+                                        </f:then>
+                                        <f:else>
+                                            <option value="{location.uid}">{location.city}</option>
+                                        </f:else>
+                                    </f:if>
+
+                                </f:for>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="column">
+                        <label for="was">
+                            <span class="label-title">was</span>
+                            <select id="was" name="tx_divaelocationmanager_divaelocationmanager[department]">
+                                <option value="0">alle Bereiche</option>
+
+                                <f:for each="{departments}" as="department">
+                                    <option value="{department.department}"  <f:if condition="{arguments.department} == {department.department}">selected</f:if> >{department.department}</option>
+                                </f:for>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="column">
+                        <label for="als">
+                            <span class="label-title">als</span>
+                            <select id="als" name="tx_divaelocationmanager_divaelocationmanager[position]">
+                                <option value="0">alle Positionen</option>
+                                <option value="Student" <f:if condition="{arguments.position} == 'Student'"> selected</f:if> >Student</option>
+                                <option value="Praktikant" <f:if condition="{arguments.position} == 'Praktikant'"> selected</f:if>>Praktikant</option>
+                                <option value="Berufseinsteiger" <f:if condition="{arguments.position} == 'Berufseinsteiger'"> selected</f:if>>Berufseinsteiger</option>
+                                <option value="Berufserfahrener" <f:if condition="{arguments.position} == 'Berufserfahrener'"> selected</f:if>>Berufserfahrener</option>
+                                <option value="Freiberufler" <f:if condition="{arguments.position} == 'Freiberufler'"> selected</f:if>>Freiberufler</option>
+                            </select>
+                        </label>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- info block -->
+    <section class="advantages-section text-section bordered-block">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-7">
+                    <h1><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:jobs"></f:translate></h1>
+                    <div class="text-section-lg">
+                        <p>An unseren Standorten in ganz Deutschland erwarten dich spannende Herausforderungen. Ob als (Technischer) Projektleiter, Software-Entwickler, Konzepter, Texter, Graﬁk-Designer oder Key Account Manager wir arbeiten gemeinsam an Erfolgsgeschichten. diva-e vereint Karriere und Teamgeist.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="area-controls">
+                <f:if condition="{jobsCount}">
+                    <span class="text-description">Beschreibung </span>
+                    <ul class="secondary-pagination hidden-xs">
+                        <li>
+                            <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position}"/>#result"><i class="icon-double-arrow-l"></i></a>
+                        </li>
+                        <f:if condition="{pagination.previousPage} != {pagination.page}">
+                        <li>
+                            <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position, page:pagination.previousPage}"/>#result"><i class="icon-previous-l"></i></a>
+                        </li>
+                        </f:if>
+                        <li class="page-counter">
+                            <span>{pagination.start} bis {pagination.end} von {jobsCount}</span>
+                        </li>
+                        <f:if condition="{pagination.nextPage} != {pagination.page}">
+                        <li>
+                            <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position, page:pagination.nextPage}"/>#result"><i class="icon-previous-r"></i></a>
+                        </li>
+                        </f:if>
+                        <li>
+                            <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position, page:pagination.totalPage}"/>#result"><i class="icon-double-arrow-r"></i></a>
+                        </li>
+                    </ul>
+                </f:if>
+            </div>
+        </div>
+    </section>
+    <!-- news-area -->
+    <section class="news-area">
+        <div class="container">
+            <div class="news-holder">
+                <ul class="news-list">
+                    <f:if condition="{jobsCount}">
+                        <f:then>
+                            <f:for each="{jobs}" as="job">
+                                <li>
+                                    <time datetime="2017-01-25">Online seit: <f:format.date format="d-m-Y">{job.publicationDate}</f:format.date></time>
+                                    <h2><a href="<f:uri.action pageUid='{settings.jobDetailPid}' controller='Job' action='show' pluginName='Divaelocationmanager' arguments='{job:"{job.uid}"}'/>">{job.title}</a></h2>
+                                    <ul class="sublist">
+                                        <li><a href="#">Art: {job.type}</a></li>
+                                        <li><a href="#">Befristung: {job.duration}</a></li>
+                                        <li><a href="#">Unternehmensbereich: {job.department}</a></li>
+                                        <li><a href="#">
+                                            <f:for each="{job.locations}" as="location">
+                                                {location.city} |
+                                            </f:for></a></li>
+                                    </ul>
+                                </li>
+                            </f:for>
+                        </f:then>
+                        <f:else>
+                            Keine Ergebnisse.
+                        </f:else>
+                        </f:if>
+
+                </ul>
+                <f:if condition="{jobsCount}">
+                <ul class="secondary-pagination">
+                    <li>
+                        <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position}"/>#result"><i class="icon-double-arrow-l"></i></a>
+                    </li>
+                    <f:if condition="{pagination.previousPage} != {pagination.page}">
+                        <li>
+                            <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position, page:pagination.previousPage}"/>#result"><i class="icon-previous-l"></i></a>
+                        </li>
+                    </f:if>
+                    <li class="page-counter">
+                        <span>{pagination.start} bis {pagination.end} von {jobsCount}</span>
+                    </li>
+                    <f:if condition="{pagination.nextPage} != {pagination.page}">
+                        <li>
+                            <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position, page:pagination.nextPage}"/>#result"><i class="icon-previous-r"></i></a>
+                        </li>
+                    </f:if>
+                    <li>
+                        <a href="<f:uri.action action="search" noCache="1" arguments="{word:arguments.word, city:arguments.city, department:arguments.department, position: arguments.position, page:pagination.totalPage}"/>#result"><i class="icon-double-arrow-r"></i></a>
+                    </li>
+                </ul>
+                </f:if>
+            </div>
+        </div>
+    </section>
+
+</f:section>
+</html>

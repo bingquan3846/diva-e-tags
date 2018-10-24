@@ -1,0 +1,88 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+<f:section name="main">
+    <div class="container">
+        <a href="#" class="close"><span></span></a>
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="popup-heading">
+                    <f:if condition="{reference.hoverpic}">
+                        <a href="#" style="margin-bottom:20px">
+                            <f:for each="{reference.hoverpic}" as="image">
+                                <f:image src="{image.uid}" treatIdAsReference="1" alt="{image.description}" height="50px"/>
+                            </f:for>
+                        </a>
+                    </f:if>
+                </div>
+                <div class="content-info">
+                    <div class="heading-xl">
+                        <h1>{reference.title}</h1>
+                    </div>
+                    <div class="content-popup-lg">
+                        <f:format.raw>{reference.shortdescription}</f:format.raw>
+                    </div>
+                    <f:if condition="{reference.detailpic}">
+                    <div class="image-holder">
+                        <f:for each="{reference.detailpic}" as="image" iteration="iterator">
+                                <f:image src="{image.uid}" treatIdAsReference="1" alt="{image.description}" width="351"/>
+                        </f:for>
+                    </div>
+                    </f:if>
+                    <f:if condition="{reference.link}">
+                    <div class="partner-link-box">
+                        <a href="{reference.link}" class="partner-link" target="_blank">{reference.link}</a>
+                    </div>
+                    </f:if>
+                    <f:format.raw>{reference.description}</f:format.raw>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <aside class="popup-sidebar">
+                    <div class="widget-holder">
+                        <f:if condition="{reference.tags}">
+                            <div class="widget-box">
+                                <div class="heading-sm">
+                                    <strong class="title"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:reference.service"></f:translate></strong>
+                                </div>
+
+                                <f:render partial="Tags/Item" arguments="{tags: reference.tags}" />
+                            </div>
+                        </f:if>
+                        <div class="widget-box">
+                            <div class="heading-sm">
+                                <strong class="title"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:news.college"></f:translate></strong>
+                            </div>
+                            <f:for each="{reference.colleges}" as="college">
+                                <div class="personal-info">
+                                    <div class="foto-box">
+                                        <img src="/uploads/pics/{college.firstImage}" alt="{college.name}" width="152" height="152">
+                                    </div>
+                                    <div class="description-box">
+                                        <strong class="name"><a href="#">{college.name}</a></strong>
+                                        <span class="position">{college.position}</span>
+                                        <hr class="line-sm">
+                                        <ul class="contact-items">
+                                            <f:if condition="{college.telephone}">
+                                            <li>
+                                                <a href="tel:<t:phone phone='{college.telephone}'></t:phone>" class="tel">+{college.telephone}</a>
+                                            </li>
+                                            </f:if>
+                                            <li>
+                                                <a href="mailto:{college.email}" class="email">{college.email}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </f:for>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="popup-footer">
+            <a href="#" class="close"><span class="title"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:close"></f:translate></span></a>
+        </div>
+    </div>
+</f:section>
+</html>

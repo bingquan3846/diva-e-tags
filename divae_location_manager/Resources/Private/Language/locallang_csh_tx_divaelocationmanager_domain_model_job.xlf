@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-11T17:30:29Z" product-name="divae_location_manager">
+		<header/>
+		<body>
+			<trans-unit id="tx_divae_location_manager_domain_model_divaelocationmanager">
+				<source>Location Manager</source>
+			</trans-unit>
+			<trans-unit id="tx_divae_location_manager_domain_model_divaelocationmanager.description">
+				<source>provides data model for locations and jobs</source>
+			</trans-unit>
+			<trans-unit id="state.description">
+				<source>state</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="position.description">
+				<source>position</source>
+			</trans-unit>
+			<trans-unit id="duration.description">
+				<source>duration</source>
+			</trans-unit>
+			<trans-unit id="department.description">
+				<source>department</source>
+			</trans-unit>
+			<trans-unit id="publication_date.description">
+				<source>publicationDate</source>
+			</trans-unit>
+			<trans-unit id="task_headline.description">
+				<source>taskHeadline</source>
+			</trans-unit>
+			<trans-unit id="task_text.description">
+				<source>taskText</source>
+			</trans-unit>
+			<trans-unit id="employer_headline.description">
+				<source>employerHeadline</source>
+			</trans-unit>
+			<trans-unit id="employer_text.description">
+				<source>employerText</source>
+			</trans-unit>
+			<trans-unit id="workplace_headline.description">
+				<source>workplaceHeadline</source>
+			</trans-unit>
+			<trans-unit id="workplace_text.description">
+				<source>workplaceText</source>
+			</trans-unit>
+			<trans-unit id="requirement_headline.description">
+				<source>requirementHeadline</source>
+			</trans-unit>
+			<trans-unit id="requirement_text.description">
+				<source>requirementText</source>
+			</trans-unit>
+			<trans-unit id="process_headline.description">
+				<source>processHeadline</source>
+			</trans-unit>
+			<trans-unit id="process_text.description">
+				<source>processText</source>
+			</trans-unit>
+			<trans-unit id="contact_headline.description">
+				<source>contactHeadline</source>
+			</trans-unit>
+			<trans-unit id="contact_text.description">
+				<source>contactText</source>
+			</trans-unit>
+			<trans-unit id="job_number.description">
+				<source>jobNumber</source>
+			</trans-unit>
+			<trans-unit id="form_link.description">
+				<source>formLink</source>
+			</trans-unit>
+			<trans-unit id="form_link.state">
+				<source>state</source>
+			</trans-unit>
+			<trans-unit id="locations.description">
+				<source>locations</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

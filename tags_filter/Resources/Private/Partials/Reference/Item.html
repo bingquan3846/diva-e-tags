@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:for each="{objects}" as="object">
+    <div class="slide-item lg-slide">
+        <a href="<f:uri.action pageUid='{settings.objects.2.singlePage}' controller='Index' action='references' pluginName='Reference' arguments='{reference:"{object.uid}"}'/>" class="box-item same-height-right">
+            <div class="top-holder">
+                <div class="left-col">
+                    <strong class="label-item">
+                        <f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:service.reference" />
+                    </strong>
+                    <div class="image-box">
+                        <f:for each="{object.teaserpic}" as="image" iteration="iterator">
+                                <f:image src="{image.uid}" treatIdAsReference="1"  class="logo-hover" title="{image.description}"/>
+
+                        </f:for>
+                    </div>
+                </div>
+
+            <div class="right-col">
+            <h3>{object.title}</h3>
+            <p><f:format.crop maxCharacters="150"><f:format.stripTags>{object.teaser}</f:format.stripTags></f:format.crop></p>
+            </div>
+            </div>
+
+            <div class="bottom-holder">
+                <div class="right-col">
+                    <div class="more-box">
+                        <span class="read-more"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:service.detail" /></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</f:for>
+</html>

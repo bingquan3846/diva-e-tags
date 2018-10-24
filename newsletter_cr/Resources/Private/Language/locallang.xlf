@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-16T14:03:09Z" product-name="newsletter_cr">
+		<header/>
+		<body>
+			<trans-unit id="tx_newslettercr_domain_model_users">
+				<source>Users</source>
+			</trans-unit>
+			<trans-unit id="tx_newslettercr_domain_model_users.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="flexforms_additional.group_id">
+				<source>Group ID</source>
+			</trans-unit>
+			<trans-unit id="flexforms_additional.client_id">
+				<source>Client ID</source>
+			</trans-unit>
+			<trans-unit id="flexforms_additional.form_id">
+				<source>Form ID</source>
+			</trans-unit>
+			<trans-unit id="flexforms_additional.login">
+				<source>Login email</source>
+			</trans-unit>
+			<trans-unit id="flexforms_additional.password">
+				<source>Password</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

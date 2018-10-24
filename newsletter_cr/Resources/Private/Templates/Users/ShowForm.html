@@ -1,0 +1,103 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <script type="text/javascript">
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        jQuery(document).ready(function(){
+            jQuery('#submitButton').click(function(){
+                var newsletterForm = jQuery('#newslettercr');
+                var url = location.href;
+                var firstname = jQuery('#name-field').val();
+                var lastname = jQuery('#surname-field').val();
+                var email = jQuery('#newsletter_email').val();
+                var position = jQuery('#position-field').val();
+                var company = jQuery('#firma-field').val();
+
+                if( firstname == '' || lastname == '' ||  !validateEmail(email)){
+                    return true;
+                }
+
+                jQuery.ajax({
+                            method: "POST",
+                            url : url ,
+                            data : "no_cache=1&tx_newslettercr_newslettercr[controller]=Users&tx_newslettercr_newslettercr[action]=subscribe&tx_newslettercr_newslettercr[email] ="
+                                    + email + "&tx_newslettercr_newslettercr[firstname]=" + firstname + "&tx_newslettercr_newslettercr[lastname]=" + lastname + "&tx_newslettercr_newslettercr[position]="
+                                    + position + "&tx_newslettercr_newslettercr[company]=" + company
+                }).done(function(response){
+                    var obj = JSON.parse(response);
+                    var status = parseInt(obj.status);
+                    if( status == 1){
+                        alert('Erfolg! Bitte bestätigen Sie Ihre Anmeldung');
+                    }else if(status == 2){
+                        alert('Die Email Address ist schon drin.');
+                    }else{
+                        alert('Die Email Address ist leer oder ungültig');
+                    }
+                });
+
+            });
+        });
+
+    </script>
+
+    <div class="subscribe-popup">
+        <div class="subscribe-box">
+            <a href="#" class="close-popup form-popup-opener">
+                <i class="icon-btn-close"></i>
+            </a>
+            <div class="bg-top-img">
+                <img src="/fileadmin/templates/fluid/images/img-newsletter-top.png" srcset="/fileadmin/templates/fluid/images/img-newsletter-top.png 2x" alt="img-description" width="320" height="116">
+            </div>
+            <div class="head-box">
+                <div class="img-box">
+                    <img src="/fileadmin/templates/fluid/images/ico-letter.svg" alt="img-description" width="44" height="44">
+                </div>
+                <div class="title-box">
+                    <strong class="title-form">Immer auf dem Laufenden.</strong>
+                    <p>Abonieren Sie unseren diva-e Newsletter</p>
+                </div>
+            </div>
+            <form action="javascript:void(0);" class="subscribe-form" id="newslettercr">
+                <div class="form-row two-cols">
+                    <div class="form-col">
+                        <label for="name-field">Vorname*</label>
+                        <input type="text" id="name-field" required>
+                    </div>
+                    <div class="form-col">
+                        <label for="surname-field">Nachname*</label>
+                        <input type="text" id="surname-field" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="newsletter_email">E-Mail Adresse*</label>
+                        <f:form.textfield type="email" property="email"  id="newsletter_email"  required="true"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="position-field">Position</label>
+                        <input type="text" id="position-field">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="firma-field">Firma/Organisation</label>
+                        <input type="text" id="firma-field">
+                    </div>
+                </div>
+
+                <div class="btn-row">
+                    <f:form.submit value="Anmelden"  id="submitButton"/>
+                    <span class="form-label">* Felder sind Pflichtfelder.</span>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</f:section>

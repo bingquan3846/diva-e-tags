@@ -1,0 +1,23 @@
+
+plugin.tx_newslettercr_newslettercr {
+	view {
+		# cat=plugin.tx_newslettercr_newslettercr/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:newsletter_cr/Resources/Private/Templates/
+		# cat=plugin.tx_newslettercr_newslettercr/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:newsletter_cr/Resources/Private/Partials/
+		# cat=plugin.tx_newslettercr_newslettercr/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:newsletter_cr/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_newslettercr_newslettercr//a; type=string; label=Default storage PID
+		storagePid = 67
+	}
+
+	settings{
+		client_id = 144583
+		group_id = 1291649
+		form_id = 143934
+		login = bingquan.bao@diva-e.com
+		password = ghjaljfc
+	}
+}

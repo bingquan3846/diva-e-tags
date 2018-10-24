@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-11T17:30:29Z" product-name="divae_location_manager">
+		<header/>
+		<body>
+			<trans-unit id="tx_divae_location_manager_domain_model_divaelocationmanager">
+				<source>Location Manager</source>
+			</trans-unit>
+			<trans-unit id="tx_divae_location_manager_domain_model_divaelocationmanager.description">
+				<source>provides data model for locations and jobs</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="zip.description">
+				<source>zip</source>
+			</trans-unit>
+			<trans-unit id="city.description">
+				<source>city</source>
+			</trans-unit>
+			<trans-unit id="street.description">
+				<source>street</source>
+			</trans-unit>
+			<trans-unit id="latitude.description">
+				<source>latitude</source>
+			</trans-unit>
+			<trans-unit id="longitude.description">
+				<source>longitude</source>
+			</trans-unit>
+			<trans-unit id="tel.description">
+				<source>tel</source>
+			</trans-unit>
+			<trans-unit id="fax.description">
+				<source>fax</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

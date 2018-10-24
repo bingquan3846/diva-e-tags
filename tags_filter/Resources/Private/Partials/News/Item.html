@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:for each="{objects}" as="object">
+    <div class="slide-item">
+        <n:link newsItem="{object}" settings="{detailPidDetermination:'categories'}" title="{object.title}" class="box-item same-height-left">
+            <div class="top-holder">
+                <strong class="label-item">
+                    <f:for each="{object.categories}" as="cat">
+                        {cat.title}
+                    </f:for>
+                </strong>
+                <h3>{object.title}</h3>
+                <p>{object.teaser}</p>
+            </div>
+            <div class="bottom-holder">
+                <div class="more-box">
+                    <span class="read-more">Mehr erfahren</span>
+                </div>
+            </div>
+
+        </n:link>
+    </div>
+</f:for>
+</html>

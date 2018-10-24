@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+<f:section name="main">
+    <f:if condition="{colleges}">
+
+
+        <f:for each="{colleges}" as="college">
+            <div class="widget-box">
+                <div class="heading-sm">
+                    <strong class="title"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:news.college"></f:translate></strong>
+                </div>
+                <div class="personal-info">
+                    <div class="foto-box">
+                        <img src="/uploads/pics/{college.firstImage}" alt="{college.name}" width="152" height="152">
+                    </div>
+                    <div class="description-box">
+                        <strong class="name"><a href="#">{college.name}</a></strong>
+                        <span class="position">Technical Director</span>
+                        <hr class="line-sm">
+                        <ul class="contact-items">
+                            <li>
+                                <a href="tel:+{college.telephone}" class="tel">+{college.telephone}</a>
+                            </li>
+                            <li>
+                                <a href="mailto:{college.email}" class="email">{college.email}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </f:for>
+
+    </f:if>
+
+</f:section>
+</html>

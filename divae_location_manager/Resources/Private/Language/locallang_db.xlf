@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-11T17:30:29Z" product-name="divae_location_manager">
+		<header/>
+		<body>
+			<trans-unit id="tx_divae_location_manager_domain_model_divaelocationmanager">
+				<source>Location Manager</source>
+			</trans-unit>
+			<trans-unit id="tx_divae_location_manager_domain_model_divaelocationmanager.description">
+				<source>provides data model for locations and jobs</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.tel">
+				<source>Tel</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.jobnumber">
+				<source>Amounts of jobs</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.advantage">
+				<source>Advantage</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job">
+				<source>Job</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.duration">
+				<source>Duration</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.department">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.publication_date">
+				<source>Publication Date</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.task_headline">
+				<source>Task Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.task_text">
+				<source>Task Text</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.employer_headline">
+				<source>Employer Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.employer_text">
+				<source>Employer Text</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.workplace_headline">
+				<source>Workplace Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.workplace_text">
+				<source>Workplace Text</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.requirement_headline">
+				<source>Requirement Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.requirement_text">
+				<source>Requirement Text</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.process_headline">
+				<source>Process Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.process_text">
+				<source>Process Text</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.contact_headline">
+				<source>Contact Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.contact_text">
+				<source>Contact Text</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.job_number">
+				<source>Job Number</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.form_link">
+				<source>Form Link</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.state">
+				<source>State</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_job.locations">
+				<source>Locations</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.page">
+				<source>Detail Page</source>
+			</trans-unit>
+			<trans-unit id="tx_divaelocationmanager_domain_model_location.pics">
+				<source>Landing pics</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

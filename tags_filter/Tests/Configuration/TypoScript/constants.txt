@@ -1,0 +1,24 @@
+
+plugin.tx_tagsfilter_tagsfilter {
+	view {
+		# cat=plugin.tx_tagsfilter_tagsfilter/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:tags_filter/Resources/Private/Templates/
+		# cat=plugin.tx_tagsfilter_tagsfilter/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:tags_filter/Resources/Private/Partials/
+		# cat=plugin.tx_tagsfilter_tagsfilter/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:tags_filter/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_tagsfilter_tagsfilter//a; type=string; label=Default storage PID
+		storagePid = 7
+
+	}
+
+	settings{
+		singleServicePid =
+	}
+}
+
+
+plugin.tx_tagsfilter_jobcount < plugin.tx_tagsfilter_tagsfilter
+plugin.tx_tagsfilter_jobcount.persistence.storagePid = 50

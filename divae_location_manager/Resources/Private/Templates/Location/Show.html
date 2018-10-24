@@ -1,0 +1,71 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+  <f:if condition="{location.advantage}">
+  <section class="advantages-section">
+    <div class="container">
+      <hr class="line-lg">
+      <h1><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:location.advantage" arguments="{ 0: location.city}"></f:translate></h1>
+      <div class="row">
+        <f:for each="{location.advantage}" as="advantage" iteration="i">
+        <div class="col-xs-6 col-md-3 viewport-box time-delay{i.cycle} in-viewport">
+          <a href="#" class="solutions-item">
+            <div class="img-holder">
+              <f:for each="{advantage.pics}" as="image">
+                <f:image src="{image.uid}" treatIdAsReference="1" />
+              </f:for>
+            </div>
+            <span class="title">{advantage.title}</span>
+            <p>{advantage.description}</p>
+          </a>
+        </div>
+        </f:for>
+      </div>
+    </div>
+  </section>
+  </f:if>
+  <f:if condition="{location.jobsnumber}">
+  <section class="career-section jobs-section bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 viewport-box time-delay1 in-viewport">
+          <div class="info-block">
+            <span class="top-label"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:career"></f:translate></span>
+            <span class="lg-num">{location.jobsnumber}</span>
+            <span class="bt-label"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:jobs"></f:translate></span>
+            <div class="text-center">
+              <a href="<f:uri.action pageUid="{settings.jobListPid}" controller="Job" action="search" arguments="{city:location.uid}"/>#result" class="btn btn-primary"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:offer"></f:translate></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 viewport-box time-delay2 in-viewport">
+          <div class="heading-title">
+            <strong class="title"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:location.wesearch"></f:translate>{location.city}</strong>
+          </div>
+          <ul class="custom-list links-list">
+            <f:for each="{location.jobs}" as="job" iteration="i">
+              <f:if condition="{i.cycle} < 9">
+                <li><a href="<f:uri.action pageUid='{settings.jobDetailPid}' controller='Job' action='show' pluginName='Divaelocationmanager' arguments='{job:"{job.uid}"}'/>" >{job.title}</a></li>
+              </f:if>
+            </f:for>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  </f:if>
+
+</f:section>
+</html>

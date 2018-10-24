@@ -1,0 +1,183 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:if condition="{mode} == 'jobs'">
+
+		<section class="city-section start-city-section location-section">
+			<div class="places-img-box">
+				<f:for each="{locations}" as="location" iteration="i">
+
+					<f:for each="{location.pics}" as="image">
+						<f:if condition="{i.cycle} == 1">
+							<f:then>
+								<div class="city-img active-img" data-cityname="city{location.uid}" style="background-image: url(/{image.originalResource.publicUrl});"></div>
+							</f:then>
+						</f:if>
+					</f:for>
+				</f:for>
+			</div>
+			<div class="top-counter-box hidden-xs">
+				<div class="heading-lg white-line">
+					<h1><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:locations"></f:translate></h1>
+				</div>
+				<div class="counter-box">
+					<a href="<f:uri.page pageUid="{settings.jobListPid}" /> " class="btn white"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:jobs"></f:translate></a>
+					<span class="counter-value"> <f:cObject typoscriptObjectPath="lib.jobCount" /></span>
+				</div>
+			</div>
+			<div class="container">
+				<div class="secondary-map">
+					<div class="map-area">
+						<div class="map-container">
+							<div class="map-block">
+								<div class="map-holder" rel="/fileadmin/templates/fluid/inc/map-styles.json">
+									<div class="map-wrap"></div>
+									<span class="overlay"></span>
+								</div>
+							</div>
+							<div class="controls-options filter-nav-box">
+								<a href="#" class="opener"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:locations.select"></f:translate></a>
+								<div class="filter-slide">
+									<div class="wrapp-head hidden-xs">
+										<a href="#" class="logo-text"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:jobs"></f:translate></a>
+									</div>
+									<ul class="locations-list add-map-list">
+										<f:for each="{locations}" as="location" iteration="i">
+											<f:if condition="{i.cycle} == 1">
+												<f:then>
+													<li>
+														<a href="#" class="city-name active" data-cityname="city{location.uid}" data-cityimg="/{location.pics.0.originalResource.publicUrl}" data-index="{location.uid}">{location.city}</a>
+														<a href="#" class="locations-counter">{location.jobsnumber}</a>
+													</li>
+												</f:then>
+												<f:else>
+													<li>
+														<a href="#" class="city-name" data-cityname="city{location.uid}" data-cityimg="/{location.pics.0.originalResource.publicUrl}" data-index="{location.uid}">{location.city}</a>
+														<a href="#" class="locations-counter">{location.jobsnumber}</a>
+													</li>
+												</f:else>
+											</f:if>
+										</f:for>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</f:if>
+  	<f:if condition="{mode} == 'landing'">
+
+	<section class="city-section start-city-section location-section">
+		<div class="places-img-box">
+			<f:for each="{locations}" as="location" iteration="i">
+
+				<f:for each="{location.pics}" as="image">
+					<f:if condition="{i.cycle} == 1">
+						<f:then>
+								<div class="city-img active-img" data-cityname="city{location.uid}" style="background-image: url(/{image.originalResource.publicUrl});"></div>
+						</f:then>
+					</f:if>
+				</f:for>
+			</f:for>
+		</div>
+		<div class="container">
+
+			<div class="top-counter-box">
+				<div class="heading-lg white-line">
+					<h1><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:locations"></f:translate></h1>
+				</div>
+			</div>
+			<div class="secondary-map">
+				<div class="map-area">
+					<div class="map-container">
+						<div class="map-block">
+							<div class="map-holder" rel="/fileadmin/templates/fluid/inc/map-styles.json">
+								<div class="map-wrap"></div>
+								<span class="overlay"></span>
+							</div>
+						</div>
+						<div class="controls-options filter-nav-box">
+							<a href="#" class="opener"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:locations.select"></f:translate></a>
+							<div class="filter-slide">
+								<div class="wrapp-head hidden-xs">
+									<a href="#" class="logo-text">diva-e</a>
+								</div>
+								<ul class="locations-list add-map-list">
+									<f:for each="{locations}" as="location" iteration="i">
+										<f:if condition="{i.cycle} == 1">
+											<f:then>
+												<li>
+													<a href="#" class="city-name active" data-cityname="city{location.uid}" data-cityimg="/{location.pics.0.originalResource.publicUrl}" data-index="{location.uid}">{location.city}</a>
+
+												</li>
+											</f:then>
+											<f:else>
+												<li>
+													<a href="#" class="city-name" data-cityname="city{location.uid}" data-cityimg="/{location.pics.0.originalResource.publicUrl}" data-index="{location.uid}">{location.city}</a>
+												</li>
+											</f:else>
+										</f:if>
+									</f:for>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  </f:if>
+ 	 <f:if condition="{mode} == 'normal'">
+	  <section class="places-section location-section bg-gray" id="places-section">
+		  <div class="container">
+			  <div class="heading-lg">
+				  <h1><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:locations"></f:translate></h1>
+			  </div>
+			  <div class="secondary-map">
+				  <div class="cluster-area">
+					  <div class="map-container">
+						  <div class="map-block">
+							  <div class="map-holder" rel="/fileadmin/templates/fluid/inc/map-styles.json">
+								  <div class="map-wrap"></div>
+								  <span class="overlay"></span>
+							  </div>
+						  </div>
+						  <div class="controls-options filter-nav-box">
+							  <a href="#" class="opener"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:locations.select"></f:translate></a>
+							  <div class="filter-slide">
+								  <div class="wrapp-head hidden-xs">
+									  <a href="#" class="logo-text">diva-e</a>
+								  </div>
+								  <ul class="locations-list add-map-list">
+									  <f:for each="{locations}" as="location" iteration="i">
+										  <f:if condition="{i.cycle} == 1">
+											  <f:then>
+												  <li>
+													  <a href="#" class="city-name" data-index="{location.uid}">{location.city}</a>
+												  </li>
+											  </f:then>
+											  <f:else>
+												  <li>
+													  <a href="#" class="city-name" data-index="{location.uid}">{location.city}</a>
+												  </li>
+											  </f:else>
+										  </f:if>
+
+									  </f:for>
+								  </ul>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	  </section>
+  </f:if>
+</f:section>
+</html>

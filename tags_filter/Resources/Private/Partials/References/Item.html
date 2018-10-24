@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <div class="slide-item">
+        <!-- article thumbnails -->
+        <article class="box-item article-box same-height-left" style="height: 350px;">
+            <div class="top-holder">
+                <strong class="label-item"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:service.references" /></strong>
+                <ul class="black-list-sm">
+                    <f:for each="{objects}" as="object">
+                    <li><a href="<f:uri.action pageUid='{settings.objects.1.singlePage}' controller='Index' action='references' pluginName='Reference' arguments='{reference:"{object.uid}"}'/>" >{object.title}</a></li>
+                    </f:for>
+                </ul>
+            </div>
+            <div class="bottom-holder">
+                <div class="more-box">
+                    <a href="<f:uri.page pageUid='{settings.objects.1.singlePage}' />" class="read-more-link"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:service.more_references" /></a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+</html>

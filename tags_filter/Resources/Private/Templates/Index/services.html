@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+<f:section name="main">
+    <style type="text/css">
+        .bg-gray:hover{
+            background: #009fe3;
+            color:white
+        }
+        .bg-gray{
+            color:#000
+        }
+
+        .bg-gray:hover .heading-md:before {
+            background:white;
+        }
+
+        .bg-gray:hover .custom-list li:before{
+            color:white;
+        }
+
+    </style>
+    <!--TYPO3SEARCH_end-->
+    <section class="options-section columned">
+        <div class="row">
+            <f:for each="{services}" as="service" iteration="i">
+            <div class="col-xs-12 col-sm-6 viewport-box time-delay{i.cycle} in-viewport">
+                <f:link.action pageUid="{settings.detailPid}" arguments="{service: service}" action="showService">
+                <article class="option-item  section-active bg-gray" id="service{service.uid}">
+                    <div class="heading-md">
+                        <h3>{service.title}</h3>
+                    </div>
+                    <ul class="custom-list">
+                        <f:for each="{service.teaser}" as="teaser">
+                            <li>{teaser}</li>
+                        </f:for>
+                    </ul>
+                </article>
+                </f:link.action>
+            </div>
+            </f:for>
+        </div>
+    </section>
+    <!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

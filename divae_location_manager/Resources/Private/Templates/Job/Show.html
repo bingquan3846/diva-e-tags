@@ -1,0 +1,91 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+  <div class="sub-nav-box hidden-xs">
+    <div class="container">
+      <ul class="sub-nav no-js">
+        <li><a href="#tasks">Aufgaben</a></li>
+        <li><a href="#conditions">Anforderungen</a></li>
+        <li><a href="#employer">Arbeitgeber</a></li>
+        <li><a href="#workplace">Arbeitsplatz</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="container content-container" id="job">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+        <div class="content-info" id="content">
+          <section class="jobs-desrc-section">
+            <div class="heading-xl">
+              <h1>{job.title}</h1>
+            </div>
+            <div class="job-description-box section-active" id="tasks">
+              <h2>{job.taskHeadline}</h2>
+              <f:format.html>{job.taskText}</f:format.html>
+            </div>
+            <div class="job-description-box" id="conditions">
+              <h2>{job.requirementHeadline}</h2>
+              <f:format.html>{job.requirementText}</f:format.html>
+            </div>
+            <div class="job-description-box" id="employer">
+              <h2>{job.employerHeadline}</h2>
+              <f:format.html>{job.employerText}</f:format.html>
+            </div>
+            <div class="job-description-box" id="workplace">
+              <h2>{job.workplaceHeadline}</h2>
+              <f:format.html>{job.workplaceText}</f:format.html>
+            </div>
+          </section>
+        </div>
+
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="widgets-secondary">
+        <!-- contain sidebar of the page -->
+        <aside id="sidebar">
+          <div class="widget-box">
+            <div class="heading-sm">
+              <strong class="title">{job.contactHeadline}</strong>
+            </div>
+            <div class="personal-info">
+              <f:format.html>{job.contactText}</f:format.html>
+            </div>
+          </div>
+          <div class="widget-box">
+            <a href="{job.formLink}" target="_blank" class="btn-apply-lg"><f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:job.apply" /></a>
+            <div class="hidden-xs">
+              <a href="javascript:print();" class="btn"> <f:translate key="LLL:fileadmin/lang/{f:cObject(typoscriptObjectPath: 'lib.language')}.locallang.xlf:job.print" /></a>
+            </div>
+          </div>
+
+        <br/>
+
+        </aside>
+        </div>
+
+    </div>
+    <div class="col-xs-12 col-md-9">
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      jQuery('#job  ul').addClass('custom-list xs-list');
+    });
+  </script>
+</f:section>
+</html>
